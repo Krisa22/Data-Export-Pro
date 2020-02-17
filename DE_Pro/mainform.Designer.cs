@@ -206,12 +206,11 @@ namespace DE_Pro
             // 
             this.add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.add.AutoSize = true;
             this.add.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.add.Depth = 0;
             this.add.Enabled = false;
             this.add.Icon = null;
-            this.add.Location = new System.Drawing.Point(5, 567);
+            this.add.Location = new System.Drawing.Point(5, 592);
             this.add.MaximumSize = new System.Drawing.Size(252, 24);
             this.add.MinimumSize = new System.Drawing.Size(252, 24);
             this.add.MouseState = MaterialSkin.MouseState.HOVER;
