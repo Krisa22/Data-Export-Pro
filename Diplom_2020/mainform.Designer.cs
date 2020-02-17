@@ -211,7 +211,7 @@ namespace DE_Pro
             this.add.Depth = 0;
             this.add.Enabled = false;
             this.add.Icon = null;
-            this.add.Location = new System.Drawing.Point(5, 579);
+            this.add.Location = new System.Drawing.Point(5, 567);
             this.add.MaximumSize = new System.Drawing.Size(252, 24);
             this.add.MinimumSize = new System.Drawing.Size(252, 24);
             this.add.MouseState = MaterialSkin.MouseState.HOVER;
