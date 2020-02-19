@@ -14,6 +14,9 @@
 # Logo
 ![gippro](https://user-images.githubusercontent.com/37382820/74772436-0b3d4b00-52a1-11ea-929f-9b465e3833aa.gif)
 
+# Форма авторизации
+![image](https://user-images.githubusercontent.com/37382820/74865527-4d7a9100-5362-11ea-9245-2510d1428b92.png)
+
 # Основная форма
 ![image](https://user-images.githubusercontent.com/37382820/74774464-d7642480-52a4-11ea-8384-6c68dc795ccf.png)
 
@@ -24,4 +27,4 @@ System.Threading,
 AmRoMessageDialog,
 MaterialSkin,
 MySql.Data.MySqlClient,
-ExcelDataReader,
+ExcelDataReader
