@@ -1,9 +1,15 @@
 # Data-Export-Pro
 Данный проект представляет собой экспорт данных в БД из Excel, при этом, конвертируя данные в полубайты.
-Программа написана для АРМ «Орион Про» для автоматизации внесениея рабочего графика сотрудников, который, в свою очередь, получает доступ к объектам. 
+Программа написана для АРМ «Орион Про» для автоматизации внесения/обновления рабочего графика сотрудников, который, в свою очередь, получает доступ к объектам. 
 Внесение изменений графика в АРМ «Орион Про» производиться в руную для каждого сотрудника отдельно, а не массово. 
 Для работы с Data Export Pro используется только одна таблица «GTime». В «GTime» храниться график сотрудников. 
 АРМ «Орион Про» записывает «id», «Name», «Comment», «Calendar», «TimeWin Type» и «WorkMode».
+______________________________________________________________________________________________________________________________________
+This project is export of data to a database from Excel, while converting data into nibbles.
+The program is written for AWP "Orion Pro" to automate the introduction of a work schedule for employees, who, in turn, gets access to the facilities.
+Making changes to the schedule in AWP "Orion Pro" made in the rune for each employee separately, and not in large quantities.
+Only one “GTime” table is used to work with Data Export Pro. GTime stores employee schedules.
+AWP “Orion Pro” records “id”, “Name”, “Comment”, “Calendar”, “TimeWin Type” and “WorkMode”.
 
 # Пример записи в базе данных
 ![image](https://user-images.githubusercontent.com/37382820/74772798-be0da900-52a1-11ea-82b9-55da4b708713.png)
@@ -28,10 +34,3 @@ AmRoMessageDialog,
 MaterialSkin,
 MySql.Data.MySqlClient,
 ExcelDataReader
-
-# Data-Export-Pro
-This project is export of data to a database from Excel, while converting data into nibbles.
-The program is written for AWP "Orion Pro" to automate the introduction of a work schedule for employees, who, in turn, gets access to the facilities.
-Making changes to the schedule in AWP "Orion Pro" made in the rune for each employee separately, and not in large quantities.
-Only one “GTime” table is used to work with Data Export Pro. GTime stores employee schedules.
-AWP “Orion Pro” records “id”, “Name”, “Comment”, “Calendar”, “TimeWin Type” and “WorkMode”.
