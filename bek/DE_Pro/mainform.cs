@@ -29,14 +29,14 @@ namespace DE_Pro
         private string dekabr = "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF";
         private int brute;
         private string fio;
-        public bool fchoice;
+        public static bool fchoice;
         public string stroka;
         public string graf;
         public static int cout;
         public DataSet DS;
         private string us;
         string monthindex;
-        public int ghostvalue;
+        public static string ghostvalue;
         AmRoMessageBox messageBox = new AmRoMessageBox
 
         {
@@ -94,8 +94,8 @@ namespace DE_Pro
                         this.groupBox1.Enabled = false;
                         this.add.Enabled = false;
                         this.unload.Enabled = true;
-                       // panel3.Enabled = false;
-                       // panel3.Visible = false;
+                        panel3.Enabled = false;
+                        panel3.Visible = false;
                     }
                     else if (this.monthcheck.Checked)
                     {
@@ -134,8 +134,8 @@ namespace DE_Pro
         }
         public void showtabvoid()
         {
-           // panel3.Enabled = true;
-           // panel3.Visible = true;
+            panel3.Enabled = true;
+            panel3.Visible = true;
             int rowIndex = this.dataGridView1.SelectedCells[0].RowIndex;
             this.dataGridView1.Rows.RemoveAt(rowIndex);
             this.dataGridView1.Rows.RemoveAt(rowIndex);
@@ -199,15 +199,14 @@ namespace DE_Pro
                 this.dataGridView1.Columns.RemoveAt(2);
             if (this.yearcheck.Checked)
             {
-                fchoice = true;
+                mainformm.fchoice = true;
                 for (int index = 1; index < 12; ++index)
                 {
-                  
+                    ghostvalue = monthbox.SelectedItem.ToString();
                     ghost ghost = new ghost();
                     ghost.Owner = (Form)this;
-                    ghost.ghost_();
+                    ghost.Show();
                     ++this.py;
-                    graf = ghost.graf;
                 }
             }
             if (!this.monthcheck.Checked)
@@ -220,7 +219,7 @@ namespace DE_Pro
         {
             
             this.stroka = this.graf;
-            //this.stroka.Trim();
+            this.stroka.Trim();
             this.stroka = this.stroka.Replace(" ", "").Replace("4,5", "0").Replace("7,5", "1").Replace("12", "2").Replace("8", "3").Replace("в", "4").Replace("от", "5");
             char[] charArray = this.stroka.ToCharArray();
             if (this.monthbox.Text == "Январь")
@@ -229,20 +228,20 @@ namespace DE_Pro
                 this.stroka = "0x" + this.stroka;
                 this.invar = this.stroka;
             }
-            if (!this.monthcheck.Checked && this.dataGridView1.DataSource.ToString() == "Январь" | this.py == 0 & fchoice && !fchoice)
+            if (!this.monthcheck.Checked && this.dataGridView1.DataSource.ToString() == "Январь" | this.py == 0 & mainformm.fchoice && !mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "F" + (object)charArray[30];
                 this.stroka = "0x" + this.stroka;
                 this.invar = this.stroka;
             }
-            if (this.monthbox.Text == "Февраль" | this.dataGridView1.DataSource.ToString() == "Февраль" | this.py == 1 & fchoice)
+            if (this.monthbox.Text == "Февраль" | this.dataGridView1.DataSource.ToString() == "Февраль" | this.py == 1 & mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + "FFFF";
                 this.fevral = this.stroka;
                 if (this.monthcheck.Checked && this.invar == "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF")
                     this.stroka = "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" + this.stroka;
             }
-            if (this.monthbox.Text == "Март" | this.py == 2 & fchoice)
+            if (this.monthbox.Text == "Март" | this.py == 2 & mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4] + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "F" + (object)charArray[30]);
                 this.mart = this.stroka;
@@ -254,7 +253,7 @@ namespace DE_Pro
                         this.stroka = this.fevral + this.stroka;
                 }
             }
-            if (this.monthbox.Text == "Апрель" | this.py == 3 & fchoice)
+            if (this.monthbox.Text == "Апрель" | this.py == 3 & mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "FF";
                 this.aprel = this.stroka;
@@ -270,7 +269,7 @@ namespace DE_Pro
                         this.stroka = this.mart + this.stroka;
                 }
             }
-            if (this.monthbox.Text == "Май" | this.py == 4 & fchoice)
+            if (this.monthbox.Text == "Май" | this.py == 4 & mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "F" + (object)charArray[30];
                 this.mai = this.stroka;
@@ -287,7 +286,7 @@ namespace DE_Pro
                     int num = this.mart != "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" & this.aprel == "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" ? 1 : 0;
                 }
             }
-            if (this.monthbox.Text == "Июнь" | this.py == 5 & fchoice)
+            if (this.monthbox.Text == "Июнь" | this.py == 5 & mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "FF";
                 this.iun = this.stroka;
@@ -307,7 +306,7 @@ namespace DE_Pro
                         stroka = this.stroka;
                 }
             }
-            if (this.monthbox.Text == "Июль" | this.py == 6 & fchoice)
+            if (this.monthbox.Text == "Июль" | this.py == 6 & mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "F" + (object)charArray[30];
                 this.iul = this.stroka;
@@ -329,7 +328,7 @@ namespace DE_Pro
                         this.stroka = this.stroka;
                 }
             }
-            if (this.monthbox.Text == "Август" | this.py == 7 & fchoice)
+            if (this.monthbox.Text == "Август" | this.py == 7 & mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "F" + (object)charArray[30];
                 this.avgust = this.stroka;
@@ -353,7 +352,7 @@ namespace DE_Pro
                         this.stroka = this.stroka;
                 }
             }
-            if (this.monthbox.Text == "Сентябрь" | this.py == 8 & fchoice)
+            if (this.monthbox.Text == "Сентябрь" | this.py == 8 & mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "FF";
                 this.sent = this.stroka;
@@ -379,7 +378,7 @@ namespace DE_Pro
                         this.stroka = this.stroka;
                 }
             }
-            if (this.monthbox.Text == "Октябрь" | this.py == 9 & fchoice)
+            if (this.monthbox.Text == "Октябрь" | this.py == 9 & mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "F" + (object)charArray[30];
                 this.oct = this.stroka;
@@ -407,7 +406,7 @@ namespace DE_Pro
                         this.stroka = this.stroka;
                 }
             }
-            if (this.monthbox.Text == "Ноябрь" | this.py == 10 & fchoice)
+            if (this.monthbox.Text == "Ноябрь" | this.py == 10 & mainformm.fchoice)
             {
                 this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "FF";
                 this.noibr = this.stroka;
@@ -437,7 +436,7 @@ namespace DE_Pro
                         this.stroka = this.stroka;
                 }
             }
-            if (!(this.monthbox.Text == "Декабрь" | this.dataGridView1.DataSource.ToString() == "Декабрь" | this.py == 11 & fchoice))
+            if (!(this.monthbox.Text == "Декабрь" | this.dataGridView1.DataSource.ToString() == "Декабрь" | this.py == 11 & mainformm.fchoice))
                 return;
             this.stroka = Convert.ToString(charArray[1].ToString() + (object)charArray[0] + (object)charArray[3] + (object)charArray[2] + (object)charArray[5] + (object)charArray[4]) + (object)charArray[7] + (object)charArray[6] + (object)charArray[9] + (object)charArray[8] + (object)charArray[11] + (object)charArray[10] + (object)charArray[13] + (object)charArray[12] + (object)charArray[15] + (object)charArray[14] + (object)charArray[17] + (object)charArray[16] + (object)charArray[19] + (object)charArray[18] + (object)charArray[21] + (object)charArray[20] + (object)charArray[23] + (object)charArray[22] + (object)charArray[25] + (object)charArray[24] + (object)charArray[27] + (object)charArray[26] + (object)charArray[29] + (object)charArray[28] + "F" + (object)charArray[30] + "FFFFFFFFFFFFFFFF";
             this.dekabr = this.stroka;
@@ -508,8 +507,8 @@ namespace DE_Pro
                         //ghost ghost = new ghost();
                         //ghost.Owner = (Form)this;
                         //ghost.Show();
-                        ghost ghost = new ghost();
-                        ghost.ghost_();
+                        ghosts ghosts = new ghosts();
+                        ghosts.ghost();
                         this.listBox1.Items.Add(this.monthbox.SelectedItem);
                     }
                     else
