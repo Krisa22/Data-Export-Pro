@@ -94,8 +94,8 @@ namespace DE_Pro
                         this.groupBox1.Enabled = false;
                         this.add.Enabled = false;
                         this.unload.Enabled = true;
-                       // panel3.Enabled = false;
-                       // panel3.Visible = false;
+                        panel3.Enabled = false;
+                        panel3.Visible = false;
                     }
                     else if (this.monthcheck.Checked)
                     {
@@ -134,8 +134,8 @@ namespace DE_Pro
         }
         public void showtabvoid()
         {
-           // panel3.Enabled = true;
-           // panel3.Visible = true;
+            panel3.Enabled = true;
+            panel3.Visible = true;
             int rowIndex = this.dataGridView1.SelectedCells[0].RowIndex;
             this.dataGridView1.Rows.RemoveAt(rowIndex);
             this.dataGridView1.Rows.RemoveAt(rowIndex);
@@ -220,7 +220,6 @@ namespace DE_Pro
         {
             
             this.stroka = this.graf;
-            //this.stroka.Trim();
             this.stroka = this.stroka.Replace(" ", "").Replace("4,5", "0").Replace("7,5", "1").Replace("12", "2").Replace("8", "3").Replace("в", "4").Replace("от", "5");
             char[] charArray = this.stroka.ToCharArray();
             if (this.monthbox.Text == "Январь")
@@ -505,9 +504,6 @@ namespace DE_Pro
                 {
                     if (this.listBox1.FindString(text) == -1)
                     {
-                        //ghost ghost = new ghost();
-                        //ghost.Owner = (Form)this;
-                        //ghost.Show();
                         ghost ghost = new ghost();
                         ghost.ghost_();
                         this.listBox1.Items.Add(this.monthbox.SelectedItem);

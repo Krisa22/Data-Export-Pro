@@ -85,5 +85,23 @@ namespace DE_Pro
                 return;
             }
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // monthbox
+            // 
+            this.monthbox.Size = new System.Drawing.Size(250, 24);
+            // 
+            // ghost
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(1512, 706);
+            this.Name = "ghost";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
+    }
     }
