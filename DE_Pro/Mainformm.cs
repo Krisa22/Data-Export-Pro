@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DE_Pro
 {
-    public partial class mainformm : MaterialForm
+    public partial class Mainformm : MaterialForm
     {
 
         public int py = 1;
@@ -47,7 +47,7 @@ namespace DE_Pro
             ClickEffectColor = "#008000",
             ShowMessageWithEffect = true,
         };
-        public mainformm()
+        public Mainformm()
         {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -88,7 +88,7 @@ namespace DE_Pro
                     if (yearcheck.Checked)
                     {
                         this.dataGridView1.DataSource = (object)this.DS.Tables[0];
-                        this.showtabvoid();
+                        this.Showtabvoid();
                         this.showtab.Enabled = false;
                         this.monthbox.Enabled = false;
                         this.groupBox1.Enabled = false;
@@ -107,7 +107,7 @@ namespace DE_Pro
                         else
                         {
                             this.dataGridView1.DataSource = (object)this.DS.Tables[this.monthbox.SelectedIndex];
-                            this.showtabvoid();
+                            this.Showtabvoid();
                             this.showtab.Enabled = false;
                             this.add.Enabled = true;
                             this.unload.Enabled = true;
@@ -132,7 +132,7 @@ namespace DE_Pro
                 }
             }
         }
-        public void showtabvoid()
+        public void Showtabvoid()
         {
             panel3.Enabled = true;
             panel3.Visible = true;
@@ -154,14 +154,14 @@ namespace DE_Pro
             this.dataGridView1.Refresh();
             this.dataGridView1.AllowUserToAddRows = false;
             for (int index = 0; index < this.dataGridView1.Rows.Count; ++index)
-                ++mainformm.cout;
-            mainformm.cout -= 16;
-            mainformm.cout /= 2;
-            this.label1.Text = "Сотрудники:" + Convert.ToString(mainformm.cout);
-            for (int index = 1; index < mainformm.cout; ++index)
+                ++Mainformm.cout;
+            Mainformm.cout -= 16;
+            Mainformm.cout /= 2;
+            this.label1.Text = "Сотрудники:" + Convert.ToString(Mainformm.cout);
+            for (int index = 1; index < Mainformm.cout; ++index)
                 this.dataGridView1.Rows.RemoveAt(int.Parse(Convert.ToString(index)));
             for (int index = 0; index <= 16; ++index)
-                this.dataGridView1.Rows.RemoveAt(int.Parse(Convert.ToString(mainformm.cout)));
+                this.dataGridView1.Rows.RemoveAt(int.Parse(Convert.ToString(Mainformm.cout)));
             this.dataGridView1.Refresh();
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.Refresh();
@@ -183,14 +183,14 @@ namespace DE_Pro
             this.dataGridView1.Columns.RemoveAt(33);
             this.dataGridView1.Columns.RemoveAt(1);
             this.dataGridView1.Refresh();
-            for (int index1 = 0; index1 < mainformm.cout; ++index1)
+            for (int index1 = 0; index1 < Mainformm.cout; ++index1)
             {
                 this.graf = "";
                 for (int index2 = 1; index2 < 32; ++index2)
                     this.graf = this.graf + " " + this.dataGridView1[index2, this.brute].Value.ToString();
                 this.fio = this.dataGridView1.Rows[this.brute].Cells[0].Value.ToString();
                 this.dataGridView1[0, this.brute].Value = (object)this.fio;
-                importExcelData();
+                ImportExcelData();
                 this.dataGridView1[1, this.brute].Value = (object)this.stroka;
                 this.dataGridView1.Refresh();
                 ++this.brute;
@@ -203,9 +203,9 @@ namespace DE_Pro
                 for (int index = 1; index < 12; ++index)
                 {
                   
-                    ghost ghost = new ghost();
+                    Ghost ghost = new Ghost();
                     ghost.Owner = (Form)this;
-                    ghost.ghost_();
+                    ghost.Ghost_();
                     ++this.py;
                     graf = ghost.graf;
                 }
@@ -216,7 +216,7 @@ namespace DE_Pro
             panel3.Enabled = false;
             panel3.Visible = false;
         }
-        public void importExcelData()
+        public void ImportExcelData()
         {
             
             this.stroka = this.graf;
@@ -504,8 +504,8 @@ namespace DE_Pro
                 {
                     if (this.listBox1.FindString(text) == -1)
                     {
-                        ghost ghost = new ghost();
-                        ghost.ghost_();
+                        Ghost ghost = new Ghost();
+                        ghost.Ghost_();
                         this.listBox1.Items.Add(this.monthbox.SelectedItem);
                     }
                     else
@@ -544,7 +544,7 @@ namespace DE_Pro
                     sqlCommand.ExecuteNonQuery();
                     Loginform.connection.Close();
                 }
-                for (int index2 = 0; index2 < mainformm.cout; ++index2)
+                for (int index2 = 0; index2 < Mainformm.cout; ++index2)
                 {
                     Loginform.connection.Close();
                     if (this.monthcheck.Checked)
@@ -621,7 +621,7 @@ namespace DE_Pro
                     messageBox.Show("\tГрафик обновлён для следующих сотрудников: \n" + this.us, "          Данные успешно загружены на сервер!\t");
                 }
                 this.reset();
-                new mainformm().Show();
+                new Mainformm().Show();
                 this.Hide();
             }
             catch (Exception ex)
@@ -637,7 +637,7 @@ namespace DE_Pro
             this.us = (string)null;
             this.DS = (DataSet)null;
             this.dataGridView1.Refresh();
-            mainformm.cout = 0;
+            Mainformm.cout = 0;
             this.brute = 0;
             this.listBox1.Items.Clear();
             this.monthbox.Items.Clear();

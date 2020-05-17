@@ -121,7 +121,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ghost.cs">
+    <Compile Include="Ghost.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Loginform.cs">
@@ -136,16 +136,16 @@
     <Compile Include="Logo.Designer.cs">
       <DependentUpon>Logo.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainform.cs">
+    <Compile Include="Mainformm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainform.Designer.cs">
-      <DependentUpon>mainform.cs</DependentUpon>
+    <Compile Include="Mainformm.Designer.cs">
+      <DependentUpon>Mainformm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ghost.resx">
-      <DependentUpon>ghost.cs</DependentUpon>
+    <EmbeddedResource Include="Ghost.resx">
+      <DependentUpon>Ghost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loginform.resx">
       <DependentUpon>Loginform.cs</DependentUpon>
@@ -153,8 +153,8 @@
     <EmbeddedResource Include="Logo.resx">
       <DependentUpon>Logo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainform.resx">
-      <DependentUpon>mainform.cs</DependentUpon>
+    <EmbeddedResource Include="Mainformm.resx">
+      <DependentUpon>Mainformm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

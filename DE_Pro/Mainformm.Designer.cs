@@ -1,7 +1,7 @@
 ﻿using DE_Pro.Properties;
 namespace DE_Pro
 {
-    partial class mainformm
+    partial class Mainformm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace DE_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainformm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainformm));
             this.yearcheck = new MaterialSkin.Controls.MaterialCheckBox();
             this.monthcheck = new MaterialSkin.Controls.MaterialCheckBox();
             this.monthbox = new System.Windows.Forms.ComboBox();
@@ -206,11 +206,12 @@ namespace DE_Pro
             // 
             this.add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.add.AutoSize = true;
             this.add.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.add.Depth = 0;
             this.add.Enabled = false;
             this.add.Icon = null;
-            this.add.Location = new System.Drawing.Point(5, 591);
+            this.add.Location = new System.Drawing.Point(5, 579);
             this.add.MaximumSize = new System.Drawing.Size(252, 24);
             this.add.MinimumSize = new System.Drawing.Size(252, 24);
             this.add.MouseState = MaterialSkin.MouseState.HOVER;
@@ -379,7 +380,7 @@ namespace DE_Pro
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // mainformm
+            // Mainformm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -399,7 +400,7 @@ namespace DE_Pro
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1512, 706);
-            this.Name = "mainformm";
+            this.Name = "Mainformm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Экспортирование данных";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainform_FormClosing);

@@ -97,7 +97,7 @@ namespace DE_Pro
                 pictureBox2.Visible = false;
                 pictureBox1.Visible = true;
                 enter.Enabled = true;
-                new mainformm().Show();
+                new Mainformm().Show();
                 this.Hide();
                 });
             }

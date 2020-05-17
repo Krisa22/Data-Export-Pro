@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace DE_Pro
 {
-    class ghost : mainformm
+    public class Ghost : Mainformm
     {
         private int coutghost;
         private int ibrute;
         private string fio;
-        private static string graf;
+        private static new string graf;
         public DataTable table = new DataTable();
         public static DataTable table2 = new DataTable();
         AmRoMessageBox messageBox = new AmRoMessageBox
@@ -27,12 +27,12 @@ namespace DE_Pro
             ShowMessageWithEffect = true,
         };
         
-        public void ghost_()
+        public void Ghost_()
         {
             table = null;
             try
             {
-                mainformm owner = (mainformm)this.Owner;
+                Mainformm owner = (Mainformm)this.Owner;
                 if (this.table == null)
                     this.table = !owner.fchoice ? owner.DS.Tables[owner.monthbox.SelectedItem.ToString()] : owner.DS.Tables[owner.py];
                 int rowIndex = table.Rows.Count;
@@ -44,7 +44,7 @@ namespace DE_Pro
                     ++this.coutghost;
                 this.coutghost -= 16;
                 this.coutghost /= 2;
-                if (mainformm.cout != this.coutghost)
+                if (Mainformm.cout != this.coutghost)
                 {
                     messageBox.Show("\tКоличество сотрудников должно быть одинаковым!\t", "\tДобавление месяца\t");
                     return;
@@ -58,13 +58,13 @@ namespace DE_Pro
                 this.table.Columns.Remove(table.Columns[1]);
                 for (int index1 = 0; index1 < this.coutghost; ++index1)
                 {
-                    DE_Pro.ghost.graf = "";
+                    DE_Pro.Ghost.graf = "";
                     for (int index2 = 1; index2 < 32; ++index2)
-                        DE_Pro.ghost.graf = DE_Pro.ghost.graf + " " + this.table.Rows[this.ibrute][index2].ToString();
+                        DE_Pro.Ghost.graf = DE_Pro.Ghost.graf + " " + this.table.Rows[this.ibrute][index2].ToString();
                     this.fio = this.table.Rows[this.ibrute][0].ToString();
                     this.table.Rows[this.ibrute] [0] = (object)this.fio;
                     owner.graf = graf;
-                    owner.importExcelData();
+                    owner.ImportExcelData();
                     this.table.Rows[this.ibrute] [1] = (object)owner.stroka;
                     ++this.ibrute;
                 }
